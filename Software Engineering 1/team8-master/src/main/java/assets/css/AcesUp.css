@@ -1,0 +1,83 @@
+.ruleBox
+{
+ border: black 2px solid;
+ border-radius: 5px;
+ top: 120px;
+ left 50px;
+ position: fixed;
+}
+
+h1{
+margin: auto;
+width: 200px;
+border: 2px;
+border-radius: 20px;
+text-align: center;
+background-color: black;
+color: white;
+font-family: "Helvetica", sans-serif;
+}
+body{
+background: darkgreen;
+}
+table{
+  margin: auto;
+}
+.title{
+  font-weight: bold;
+}
+.columnOfCards {
+  vertical-align: top;
+  width: auto;
+  float: left;
+}
+.emptyLocation {
+  height: 118px;
+  width: 82px;
+  border: black 1px solid;
+  border-radius: 5px;
+}
+.cardLocation{
+
+}
+#discard {
+  height: 120px;
+  width: 82px;
+  position: fixed;
+  right: 50px;
+  top: 10px;
+  border: red 2px dotted;
+  text-align: center;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/No_sign_Right.svg/1000px-No_sign_Right.svg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+}
+#dealButton {
+  height: 120px;
+  width: 86px;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  background: darkgreen;
+  background-image: url('https://i.pinimg.com/736x/c1/59/b4/c159b4738dae9c9d8d6417228024de8d--playing-card-design-card-card.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: black solid 1px;
+  border-radius: 10px;
+}
+
+#swapRuleSetButton {
+   height: 50px;
+   width: 100px;
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   border: black solid 1px;
+   background: white;
+   border-radius: 5px;
+   font-family: "Helvetica", sans-serif;
+   text-size: 120%;
+}
