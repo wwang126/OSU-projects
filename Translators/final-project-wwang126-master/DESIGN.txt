@@ -1,0 +1,76 @@
+Wavelet Wang
+UID:932-006-582
+
+The main focus of this program is in the AST.cpp file. In general this program
+is a modification of the provided ast code my essentially merging the provided
+ast.cpp along with the compiler.cpp provided as example code during class.
+
+The main focus of this code is the fact that I modified all the AST subclasses
+to have a new virtual function generateIR() which returns a llvm::Value* (which
+is essentially a container for llvm values). In general however, unlike the
+bison implementation this code uses the global statics in TheContext, TheBuilder,
+and The Module. TheSymbolTable is mostly there to allow for mapping specific
+variable names to their corresponding llvm::Value* objects. Thus the construction
+of the intermediate representation essentially stacks on top of those static
+variables (basically variables that are the same with all objects of that class).
+We can take advantage of the fact that they are static variables and shared
+between all the objects of that class to allow from different "nodes" to interact
+with each other WITHOUT having to pass up nodes. So in general although the
+generateIR() function does return a value, it actually doesn't need to.
+
+More deeply in the meat and bones of the program, we initialize the entire program
+essentially in generateObjCode setting up TheContext, TheBuilder, and TheModule
+to be used by the rest of the nodes. Then, because we have the top of the tree,
+which is passed in to that function from main (more on that later), we can
+recursively go down the tree in order to generate the IR representation of
+our code from the ASTNode structure that we currently have. The basic mode of
+operation is that because we call generateIR() recursively, we travel down the
+tree hitting every connected node and adding it to TheModule. Finally, after
+that is done we can move onto actually outputting the data.
+
+NOTE: Be aware that the current structure of this program is HARD-CODED to
+return the sphere_surf_area variable because of the requirements specified and
+will run into issues if it doesn't find that variables. The original design of
+the ast.cpp had 3 major changes, @100 we were using a getVoitTy, @105 we were
+using an internal linkage, and @118 we were simply creating a void return.
+However, in order to test this program by linking it with another file, the
+current version specifically returns sphere_surf_area to provide some kind of
+output for test.cpp. This is also copied over to generateIRCodeOp() which
+generates optimized code.
+
+Optimized Code:
+
+If we look at the optimized code IR we'll see that it only has a single command
+ret float 0x408921CAC0000000, which is the actual answer as the example code used
+p1.py consists of only constants which don't change, thus the compiler is performing
+all calculations and is simply returning the answer in our optimization.
+
+Running this program:
+
+1. Run make to generate the parser file.
+2. Run the command ./parse <testing_code/p1.py
+  2-a.  This command can be modified by running ./parse -O <testing_code/p1.py
+        to run the optmized version
+  2-b.  By default the code will also print the intermediate representation to
+        standard out. This is different from p1.ll in a few places as outlined
+        above. Mainly in that it returns a float instead of a void and has a
+        different name.
+3. Run make test to test the linker with output.o
+  3-a. run testprog to see the output of sphere_surf_area
+  3-b. optionally run ./parse -O <testing_code/p1.py to see the optmized version
+  3-c. run make test again to regenerate testprog
+  3-d. run testprog to see the output of sphere_surf_area
+
+Linking the code
+One big thing that is important to mention is the requirement for test.cpp being
+able to link and print with output.o neccessitated the changes like the inclusion
+of a hardcoded return value that esentially makes this program hardcoded to p1.py
+(or any program with sphere_surf_area as a float). Thus test.cpp literally only
+prints sphere_surf_area.
+
+Lexer/Parser
+For the purposes of completeness it bears mentioning that the actual structure
+of our progam is based off of the provided lexer and parser based in flex and
+bison respectively. Those two files will output an abstract syntax tree that
+we are parsing (again) into the output.o object file which then gets linked
+without test.cpp. 
