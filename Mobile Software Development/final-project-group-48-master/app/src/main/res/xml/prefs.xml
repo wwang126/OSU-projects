@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:key="@string/pref_type_key"
+        android:title="@string/pref_type_title"
+        android:summary="%s"
+        android:dialogTitle="@string/pref_type_title"
+        android:entries="@array/pref_type_entries"
+        android:entryValues="@array/pref_type_values"
+        android:defaultValue="@string/pref_type_default"/>
+
+    <ListPreference
+        android:key="@string/pref_rarity_key"
+        android:title="@string/pref_rarity_title"
+        android:summary="%s"
+        android:dialogTitle="@string/pref_rarity_title"
+        android:entries="@array/pref_rarity_entries"
+        android:entryValues="@array/pref_rarity_values"
+        android:defaultValue="@string/pref_rarity_default"/>
+
+    <EditTextPreference
+        android:key="@string/pref_balance_key"
+        android:title="@string/pref_balance_title"
+        android:defaultValue="@string/pref_balance_default"/>
+</PreferenceScreen>

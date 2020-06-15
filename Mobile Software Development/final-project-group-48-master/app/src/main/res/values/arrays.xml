@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_type_entries">
+        <item>@string/pref_type_entry_any</item>
+        <item>@string/pref_type_entry_pistol</item>
+        <item>@string/pref_type_entry_smg</item>
+        <item>@string/pref_type_entry_rifle</item>
+        <item>@string/pref_type_entry_knife</item>
+        <item>@string/pref_type_entry_sniper_rifle</item>
+        <item>@string/pref_type_entry_shotgun</item>
+        <item>@string/pref_type_entry_container</item>
+        <item>@string/pref_type_entry_gloves</item>
+        <item>@string/pref_type_entry_collectible</item>
+    </string-array>
+
+    <string-array name="pref_type_values">
+        <item>@string/pref_type_value_any</item>
+        <item>@string/pref_type_value_pistol</item>
+        <item>@string/pref_type_value_smg</item>
+        <item>@string/pref_type_value_rifle</item>
+        <item>@string/pref_type_value_knife</item>
+        <item>@string/pref_type_value_sniper_rifle</item>
+        <item>@string/pref_type_value_shotgun</item>
+        <item>@string/pref_type_value_container</item>
+        <item>@string/pref_type_value_gloves</item>
+        <item>@string/pref_type_value_collectible</item>
+    </string-array>
+
+    <string-array name="pref_rarity_entries">
+        <item>@string/pref_rarity_entry_any</item>
+        <item>@string/pref_rarity_entry_base_grade</item>
+        <item>@string/pref_rarity_entry_high_grade</item>
+        <item>@string/pref_rarity_entry_extraordinary</item>
+        <item>@string/pref_rarity_entry_exotic</item>
+        <item>@string/pref_rarity_entry_contraband</item>
+    </string-array>
+
+    <string-array name="pref_rarity_values">
+        <item>@string/pref_rarity_value_any</item>
+        <item>@string/pref_rarity_value_base_grade</item>
+        <item>@string/pref_rarity_value_high_grade</item>
+        <item>@string/pref_rarity_value_extraordinary</item>
+        <item>@string/pref_rarity_value_exotic</item>
+        <item>@string/pref_rarity_value_contraband</item>
+    </string-array>
+</resources>

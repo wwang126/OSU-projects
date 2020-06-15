@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/add_location"
+        android:title="add location"
+        android:icon="@drawable/ic_action_location" />
+
+    <item
+        android:id="@+id/location_1"
+        android:title="location 1"
+        android:icon="@drawable/ic_action_location" />
+
+    <item
+        android:id="@+id/location_2"
+        android:title="location 2"
+        android:icon="@drawable/ic_action_location" />
+
+
+</menu>

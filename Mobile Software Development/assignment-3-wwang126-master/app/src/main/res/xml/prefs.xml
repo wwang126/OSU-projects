@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="pref_units"
+        android:title="Choose Temperature Units"
+        android:summary="%s"
+        android:dialogTitle="Choose Temperature Units"
+        android:entries="@array/pref_units_entries"
+        android:entryValues="@array/pref_units_values"
+        android:defaultValue="imperial"/>
+    <EditTextPreference
+        android:key="@string/pref_loc_key"
+        android:title="@string/pref_loc_title"
+        android:defaultValue="Corvallis,OR,US"/>
+</PreferenceScreen>

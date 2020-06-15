@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SteamMarketApp.iml" filepath="$PROJECT_DIR$/SteamMarketApp.iml" group="SteamMarketApp" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="SteamMarketApp/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/final-project-group-48-app.iml" filepath="$PROJECT_DIR$/app/final-project-group-48-app.iml" group="SteamMarketApp/app" />
+    </modules>
+  </component>
+</project>
